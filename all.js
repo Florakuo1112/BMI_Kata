@@ -46,55 +46,59 @@ const bmiStatesData = {
 //第一階段
 
 
-// function printBmi(height, weight){
-//     const bmi = (weight/(height/100)**2).toFixed(2);
-//     if(bmi<18){
-//         console.log("您的體重過輕")
-//     }else if(bmi<24){
-//         console.log("您的體重正常")
-//     }else if(bmi<27){
-//         console.log("您的體重過重")
-//     }else if(bmi<30){
-//         console.log("您的體重輕度肥胖")
-//     }else if(bmi<35){
-//         console.log("您的體重中度肥胖")
-//     }else if(bmi>=35){
-//         console.log("您的體重重度肥胖")
-//     }else{
-//         console.log("您的數值輸入錯誤，請重新輸入");
-//     }
-// }
-
-//第二階段
-
-function printBmiText(state){
-    console.log(`您的體重${bmiStatesData[state].state}，健康指數為${bmiStatesData[state].color}`)
-}
-
 function printBmi(height, weight){
-    const bmi = (weight/(height/100)**2).toFixed(2);
+    const bmi = Number((weight/(height/100)**2).toFixed(2)); //使用 toFixed 方法回傳的會是字串,使用Number()會把string變成number
+    console.log(typeof(bmi));//會是string
+    console.log(bmi)
+ 
+  
     if(bmi<18){
-        printBmiText("overThin");
-        addData(bmi, "overThin");
+        console.log("您的體重過輕")
     }else if(bmi<24){
-        printBmiText("normal");
-        addData(bmi, "normal");
+        console.log("您的體重正常")
     }else if(bmi<27){
-        printBmiText("overWeight");
-        addData(bmi, "overWeight");
+        console.log("您的體重過重")
     }else if(bmi<30){
-        printBmiText("mildFat");
-        addData(bmi, "mildFat");
+        console.log("您的體重輕度肥胖")
     }else if(bmi<35){
-        printBmiText("moderateFat");
-        addData(bmi, "moderateFat");
+        console.log("您的體重中度肥胖")
     }else if(bmi>=35){
-        printBmiText("severeFat");
-        addData(bmi, "severeFat");
+        console.log("您的體重重度肥胖")
     }else{
         console.log("您的數值輸入錯誤，請重新輸入");
     }
 }
+
+//第二階段
+
+// function printBmiText(state){
+//     console.log(`您的體重${bmiStatesData[state].state}，健康指數為${bmiStatesData[state].color}`)
+// }
+
+// function printBmi(height, weight){
+//     const bmi = (weight/(height/100)**2).toFixed(2);
+//     if(bmi<18){
+//         printBmiText("overThin");
+//         addData(bmi, "overThin");
+//     }else if(bmi<24){
+//         printBmiText("normal");
+//         addData(bmi, "normal");
+//     }else if(bmi<27){
+//         printBmiText("overWeight");
+//         addData(bmi, "overWeight");
+//     }else if(bmi<30){
+//         printBmiText("mildFat");
+//         addData(bmi, "mildFat");
+//     }else if(bmi<35){
+//         printBmiText("moderateFat");
+//         addData(bmi, "moderateFat");
+//     }else if(bmi>=35){
+//         printBmiText("severeFat");
+//         addData(bmi, "severeFat");
+//     }else{
+//         console.log("您的數值輸入錯誤，請重新輸入");
+//     }
+// }
 
 
 
